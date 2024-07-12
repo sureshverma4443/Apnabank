@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+    <h1>DENA BANK</h1>
+    </nav>
+    <div class="second">
+    <div id="data">
+     <h1>Available  Balance:- <span id="span">0</span></h1>
+     <input type="number" placeholder="Credit/Debit Amout" id="xyz"><br><br><br>
+     <div id="buttons">
+        <button id="Credit">Credit</button><button id="Debit">Debit</button>
+     </div>
+     
+    </div>
+    </div>
+</body>
+<script>
+       let Avlbalance=document.getElementById("span")
+    let creditdebitamount=document.getElementById("xyz")
+    let Credit=document.getElementById("Credit")
+    Credit.addEventListener("click",creditbutton)
+
+    let Debit=document.getElementById("Debit")
+    Debit.addEventListener("click",Debitbutton)
+
+
+
+    let Balance=0;
+    function creditbutton(){
+     let creditamount=Number(creditdebitamount.value)
+       Balance=creditamount+Balance
+       span.innerHTML=Balance
+        }
+        creditbutton()
+
+    // let Balance1=0;
+    function Debitbutton(){
+        if(Balance < creditdebitamount.value){
+        alert("Insufficient Balance")
+        return 
+       }  
+     let Debitamount= Number(creditdebitamount.value)
+       Balance=span.innerHTML-Debitamount
+       span.innerHTML=Balance
+       
+        
+
+        }
+        Debitbutton()
+        
+        
+</script>
+</html>
